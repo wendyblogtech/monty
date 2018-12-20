@@ -24,7 +24,6 @@ void erropen(char *arg)
  * errnomatch - Print error message if file contains an invalid instruction
  * @stack: stack
  * @line_number: line number
- * @line: line
  */
 void errnomatch(stack_t **stack, unsigned int line_number)
 {
