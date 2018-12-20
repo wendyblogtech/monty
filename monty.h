@@ -70,7 +70,7 @@ void errpop(stack_t **stack, unsigned int line_number);
 void errswap(stack_t **stack, unsigned int line_number);
 void erradd(stack_t **stack, unsigned int line_number);
 void errsub(stack_t **stack, unsigned int line_number);
-void errdiv(stack_t **stack, unsigned int line_number);
+void errdiv(stack_t **stack, unsigned int line_number, int divcode);
 
 /* err3 */
 void errmul(stack_t **stack, unsigned int line_number);

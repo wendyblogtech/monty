@@ -56,10 +56,18 @@ void _sub(stack_t **stack, unsigned int line_number)
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
-	int result = 0;
+	int result = 0, divcode = 0;
 
 	if (!*stack || !(*stack)->next)
-		errdiv(stack, line_number);
+	{
+		divcode = 1;
+		errdiv(stack, line_number, divcode);
+	}
+	if ((*stack)->n == 0)
+	{
+		divcode = 2;
+		errdiv(stack, line_number, divcode);
+	}
 	result = (*stack)->next->n / (*stack)->n;
 	(*stack)->next->n = result;
 	pop(stack, line_number);
