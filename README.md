@@ -1,1 +1,4 @@
 # monty
+
+## Author
+Wendy Leung
