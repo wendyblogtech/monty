@@ -26,7 +26,7 @@ void erropen(char *arg)
  * @line_number: line number
  * @line: line
  */
-void errnomatch(stack_t **stack, unsigned int line_number, char *line)
+void errnomatch(stack_t **stack, unsigned int line_number)
 {
 	free_stack(*stack);
 	fclose(info.fp);

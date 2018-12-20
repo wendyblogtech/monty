@@ -61,7 +61,7 @@ info_t info;
 /* err */
 void errac(void);
 void erropen(char *arg);
-void errnomatch(stack_t **stack, unsigned int line_number, char *line);
+void errnomatch(stack_t **stack, unsigned int line_number);
 void errpush(stack_t **stack, unsigned int line_number);
 void errpint(stack_t **stack, unsigned int line_number);
 

@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		if (info.command)
 			ret_ops = get_op_func(&stack, line_number);
 		if (ret_ops == 0)
-			errnomatch(&stack, line_number, info.line);
+			errnomatch(&stack, line_number);
 	}
 	free(info.line);
 	free_stack(stack);
