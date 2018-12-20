@@ -94,7 +94,7 @@ void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp = 0;
 
-	if (!stack || !(*stack)->next)
+	if (!*stack || !(*stack)->next)
 		errswap(stack, line_number);
 	temp = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;
