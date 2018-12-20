@@ -10,6 +10,8 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 
+	if (info.number == NULL || !(isdigits(info.number)))
+		errpush(stack, line_number);
 	if (isdigits(info.number))
 	{
 		new = malloc(sizeof(stack_t));
@@ -27,10 +29,6 @@ void push(stack_t **stack, unsigned int line_number)
 		*stack = new;
 		if (new->next != NULL)
 			new->next->prev = new;
-	}
-	else if (info.number == NULL || (!isdigits(info.number)))
-	{
-		errpush(stack, line_number);
 	}
 }
 

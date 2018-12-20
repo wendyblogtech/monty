@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 	int ret_ops = 0;
 
 	info.line = NULL;
+	info.number = NULL;
 	if (argc != 2)
 		errac();
 	info.fp = fopen(argv[1], "r");
