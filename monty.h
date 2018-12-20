@@ -94,6 +94,7 @@ void _mul(stack_t **stack, unsigned int line_number);
 /* ops3 */
 void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
+void _pstr(stack_t **stack, unsigned int line_number);
 
 /* helper */
 int get_op_func(stack_t **stack, unsigned int line_number);

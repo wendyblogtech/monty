@@ -51,3 +51,33 @@ void _pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+
+/**
+ * _pstr - Prints the string starting at top of the stack, followed by new line
+ * Integer stored in each element of the stack is treated as the ascii value of
+ * the character to be printed
+ * The string stops when the stack is over, value of element is 0, or value is
+ * not in the ascii table
+ * If stack is empty, print only a new line
+ * @stack: stack
+ * @line_number: line number
+ */
+void _pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *mover;
+	(void)line_number;
+
+	if (!*stack)
+	{
+		printf("\n");
+	}
+	mover = *stack;
+	while (mover)
+	{
+		if ((mover)->n < 1 || (mover)->n > 127)
+			break;
+		printf("%c", (mover)->n);
+		mover = (mover)->next;
+	}
+	printf("\n");
+}
