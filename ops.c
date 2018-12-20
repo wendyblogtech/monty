@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int line_number)
 			free_stack(*stack);
 			free(info.line);
 			fclose(info.fp);
-			fprintf(stderr, "malloc() failed: insufficient memory!\n");
+			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
 		new->n = atoi(info.number);
