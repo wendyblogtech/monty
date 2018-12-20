@@ -16,12 +16,17 @@ void errmul(stack_t **stack, unsigned int line_number)
 
 /**
  * errmod - Print error when stack contains less than two elements for mod
+ * or if top element is 0
  * @stack: stack
  * @line_number: line number
+ * @modcode: error code
  */
-void errmod(stack_t **stack, unsigned int line_number)
+void errmod(stack_t **stack, unsigned int line_number, int modcode)
 {
-	fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+	if (modcode == 1)
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+	else if (modcode == 2)
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 	free_stack(*stack);
 	fclose(info.fp);
 	free(info.line);

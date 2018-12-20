@@ -58,6 +58,7 @@ void errsub(stack_t **stack, unsigned int line_number)
 
 /**
  * errdiv - Print error when stack contains less than two elements for div
+ * or if top element is 0
  * @stack: stack
  * @line_number: line number
  * @divcode: error code

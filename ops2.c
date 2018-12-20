@@ -49,7 +49,7 @@ void _sub(stack_t **stack, unsigned int line_number)
 
 /**
  * _div - Divide the second top element of the stack by top element of stack
- * If stack contains less than two elements, print error message
+ * If stack contains less than 2 elements or if top element is 0, print error
  * Result is stored in second top element of the stack & top element is removed
  * @stack: stack
  * @line_number: line number

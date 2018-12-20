@@ -74,7 +74,7 @@ void errdiv(stack_t **stack, unsigned int line_number, int divcode);
 
 /* err3 */
 void errmul(stack_t **stack, unsigned int line_number);
-void errmod(stack_t **stack, unsigned int line_number);
+void errmod(stack_t **stack, unsigned int line_number, int modcode);
 
 /* ops */
 void push(stack_t **stack, unsigned int line_number);
