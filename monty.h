@@ -75,6 +75,7 @@ void errdiv(stack_t **stack, unsigned int line_number, int divcode);
 /* err3 */
 void errmul(stack_t **stack, unsigned int line_number);
 void errmod(stack_t **stack, unsigned int line_number, int modcode);
+void errpchar(stack_t **stack, unsigned int line_number, int pcharcode);
 
 /* ops */
 void push(stack_t **stack, unsigned int line_number);
@@ -92,6 +93,7 @@ void _mul(stack_t **stack, unsigned int line_number);
 
 /* ops3 */
 void _mod(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 
 /* helper */
 int get_op_func(stack_t **stack, unsigned int line_number);

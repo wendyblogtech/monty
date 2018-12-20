@@ -26,3 +26,28 @@ void _mod(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = result;
 	pop(stack, line_number);
 }
+
+/**
+ * _pchar - Print char at the top of the stack
+ * The integer stored at the top of the stack is treated as the ascii value of
+ * the character to be printed
+ * If the value is not in the ascii table or if stack is empty, print error
+ * @stack: stack
+ * @line_number: line number
+ */
+void _pchar(stack_t **stack, unsigned int line_number)
+{
+	int pcharcode = 0;
+
+	if (!*stack)
+	{
+		pcharcode = 1;
+		errpchar(stack, line_number, pcharcode);
+	}
+	if ((*stack)->n < 0 || (*stack)->n > 127)
+	{
+		pcharcode = 2;
+		errpchar(stack, line_number, pcharcode);
+	}
+	printf("%c\n", (*stack)->n);
+}
