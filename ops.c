@@ -70,7 +70,7 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *pointer;
 
-	if (!stack)
+	if (!*stack)
 		errpop(stack, line_number);
 	if ((*stack)->next != NULL)
 	{
