@@ -104,3 +104,32 @@ void _rotl(stack_t **stack, unsigned int line_number)
 		mover->n = temp;
 	}
 }
+
+/**
+ * _rotr - Rotates the stack to the bottom
+ * The last element of the stack becomes the top element of the stack
+ * rotr never fails
+ * @stack: stack
+ * @line_number: line number
+ */
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	int temp, temp2;
+	stack_t *mover;
+	(void)line_number;
+
+	if (*stack)
+	{
+		mover = *stack;
+		temp = mover->n;
+		while (mover->next)
+		{
+			temp2 = temp;
+			temp = mover->next->n;
+			mover->next->n = temp2;
+
+			mover = mover->next;
+		}
+		(*stack)->n = temp;
+	}
+}
