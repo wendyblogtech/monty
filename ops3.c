@@ -15,12 +15,12 @@ void _mod(stack_t **stack, unsigned int line_number)
 	if (!*stack || !(*stack)->next)
 	{
 		modcode = 1;
-		errmul(stack, line_number, modcode);
+		errmod(stack, line_number, modcode);
 	}
 	if ((*stack)->n == 0)
 	{
 		modcode = 2;
-		errmul(stack, line_number, modcode);
+		errmod(stack, line_number, modcode);
 	}
 	result = (*stack)->next->n % (*stack)->n;
 	(*stack)->next->n = result;
