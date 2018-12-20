@@ -67,10 +67,6 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	stack_t *mover;
 	(void)line_number;
 
-	if (!*stack)
-	{
-		printf("\n");
-	}
 	mover = *stack;
 	while (mover)
 	{
