@@ -60,10 +60,14 @@ void errsub(stack_t **stack, unsigned int line_number)
  * errdiv - Print error when stack contains less than two elements for div
  * @stack: stack
  * @line_number: line number
+ * @divcode: error code
  */
-void errdiv(stack_t **stack, unsigned int line_number)
+void errdiv(stack_t **stack, unsigned int line_number, int divcode)
 {
-	fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+	if (divcode == 1)
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+	else if (divcode == 2)
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 	free_stack(*stack);
 	fclose(info.fp);
 	free(info.line);
