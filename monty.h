@@ -98,6 +98,9 @@ void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
 
+/* ops4 */
+void _stack(stack_t **stack, unsigned int line_number);
+
 /* helper */
 int get_op_func(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
