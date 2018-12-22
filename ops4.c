@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * _stack - Doesn't do anything
+ * _stack - Sets the format of the data to a stack(LIFO)
+ * This is the default behavior of the program.
  * @stack: stack
  * @line_number: line number
  */
