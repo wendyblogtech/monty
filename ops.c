@@ -9,11 +9,11 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new, *mover = *stack;
-	char *push_arg = strtok(NULL, MY_DELIM);
+	char *number = strtok(NULL, MY_DELIM);
 
-	if (push_arg == NULL || !(isdigits(push_arg)))
+	if (number == NULL || !(isdigits(number)))
 		errpush(stack, line_number);
-	if (isdigits(push_arg))
+	if (isdigits(number))
 	{
 		new = malloc(sizeof(stack_t));
 		if (new == NULL)
@@ -24,11 +24,11 @@ void push(stack_t **stack, unsigned int line_number)
 			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
-		new->n = atoi(push_arg);
+		new->n = atoi(number);
 		if (info.flag)
 		{
-			new->prev = NULL;
 			new->next = NULL;
+			new->prev = NULL;
 			if (!*stack)
 				*stack = new;
 			else
@@ -41,11 +41,11 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 		else
 		{
-			new->prev = NULL;
 			new->next = *stack;
-			if (*stack)
-				(*stack)->prev = new;
+			new->prev = NULL;
 			*stack = new;
+			if (new->next)
+				new->next->prev = new;
 		}
 	}
 }

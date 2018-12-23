@@ -43,10 +43,10 @@ typedef struct instruction_s
 
 /**
  * struct info_s - info
+ * @flag: flag for stack or queue
  * @line: line from file
  * @fp: file pointer
  * @command: command
- * @number: number to store in node
  */
 typedef struct info_s
 {

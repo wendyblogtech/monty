@@ -30,6 +30,7 @@ int main(int argc, char **argv)
 			errnomatch(&stack, line_number);
 	}
 	free_stack(stack);
+	free(info.line);
 	fclose(info.fp);
 	return (EXIT_SUCCESS);
 }

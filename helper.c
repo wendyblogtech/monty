@@ -59,9 +59,9 @@ void free_stack(stack_t *stack)
 
 	while (mover)
 	{
-		mover = stack->next;
-		free(stack);
-		stack = mover;
+		stack = (stack)->next;
+		free(mover);
+		mover = stack;
 	}
 }
 
