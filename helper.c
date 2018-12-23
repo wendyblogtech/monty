@@ -26,6 +26,7 @@ int get_op_func(stack_t **stack, unsigned int line_number)
 	{"rotl", _rotl},
 	{"rotr", _rotr},
 	{"stack", _stack},
+	{"queue", _queue},
 	{NULL, NULL}
 	};
 	int i;

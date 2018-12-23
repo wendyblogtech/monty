@@ -50,10 +50,10 @@ typedef struct instruction_s
  */
 typedef struct info_s
 {
+	int flag;
 	char *line;
 	FILE *fp;
 	char *command;
-	char *number;
 } info_t;
 
 info_t info;
@@ -100,6 +100,7 @@ void _rotr(stack_t **stack, unsigned int line_number);
 
 /* ops4 */
 void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 /* helper */
 int get_op_func(stack_t **stack, unsigned int line_number);
