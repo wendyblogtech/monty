@@ -18,10 +18,8 @@ void push(stack_t **stack, unsigned int line_number)
 		new = malloc(sizeof(stack_t));
 		if (new == NULL)
 		{
-			free_stack(*stack);
-			free(info.line);
-			fclose(info.fp);
 			fprintf(stderr, "Error: malloc failed\n");
+			free_close(*stack);
 			exit(EXIT_FAILURE);
 		}
 		new->n = atoi(number);

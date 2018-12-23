@@ -8,9 +8,7 @@
 void errmul(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -27,9 +25,7 @@ void errmod(stack_t **stack, unsigned int line_number, int modcode)
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 	else if (modcode == 2)
 		fprintf(stderr, "L%u: division by zero\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -46,9 +42,7 @@ void errpchar(stack_t **stack, unsigned int line_number, int pcharcode)
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 	else if (pcharcode == 2)
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 

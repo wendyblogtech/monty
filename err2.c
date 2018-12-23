@@ -8,9 +8,7 @@
 void errpop(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -22,12 +20,9 @@ void errpop(stack_t **stack, unsigned int line_number)
 void errswap(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
-
 /**
  * erradd - Print error when stack contains less than two elements for add
  * @stack: stack
@@ -36,9 +31,7 @@ void errswap(stack_t **stack, unsigned int line_number)
 void erradd(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -50,9 +43,7 @@ void erradd(stack_t **stack, unsigned int line_number)
 void errsub(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -69,8 +60,6 @@ void errdiv(stack_t **stack, unsigned int line_number, int divcode)
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 	else if (divcode == 2)
 		fprintf(stderr, "L%u: division by zero\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }

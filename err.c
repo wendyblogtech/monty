@@ -6,7 +6,7 @@
  */
 void errac(void)
 {
-	dprintf(STDERR_FILENO, "USAGE: monty file\n");
+	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -16,7 +16,7 @@ void errac(void)
  */
 void erropen(char *arg)
 {
-	dprintf(STDERR_FILENO, "Error: Can't open file %s\n", arg);
+	fprintf(stderr, "Error: Can't open file %s\n", arg);
 	exit(EXIT_FAILURE);
 }
 
@@ -27,10 +27,8 @@ void erropen(char *arg)
  */
 void errnomatch(stack_t **stack, unsigned int line_number)
 {
-	free_stack(*stack);
-	fclose(info.fp);
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, info.command);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -42,9 +40,7 @@ void errnomatch(stack_t **stack, unsigned int line_number)
 void errpush(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: usage: push integer\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }
 
@@ -56,8 +52,6 @@ void errpush(stack_t **stack, unsigned int line_number)
 void errpint(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-	free_stack(*stack);
-	fclose(info.fp);
-	free(info.line);
+	free_close(*stack);
 	exit(EXIT_FAILURE);
 }

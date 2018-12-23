@@ -104,7 +104,7 @@ void _queue(stack_t **stack, unsigned int line_number);
 
 /* helper */
 int get_op_func(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t *stack);
+void free_close(stack_t *stack);
 int isdigits(char *number);
 
 #endif

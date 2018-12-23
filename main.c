@@ -29,8 +29,6 @@ int main(int argc, char **argv)
 		if (ret_ops == 0)
 			errnomatch(&stack, line_number);
 	}
-	free_stack(stack);
-	free(info.line);
-	fclose(info.fp);
+	free_close(stack);
 	return (EXIT_SUCCESS);
 }
