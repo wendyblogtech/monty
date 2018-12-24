@@ -10,8 +10,7 @@ int main(int argc, char **argv)
 {
 	size_t len = 0;
 	stack_t *stack = NULL;
-	unsigned int line_number = 0;
-	int ret_ops = 0;
+	unsigned int line_number = 0, ret_ops = 0;
 
 	info.flag = 0;
 	info.line = NULL;
