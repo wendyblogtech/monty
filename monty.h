@@ -103,7 +103,7 @@ void _stack(stack_t **stack, unsigned int line_number);
 void _queue(stack_t **stack, unsigned int line_number);
 
 /* helper */
-int get_op_func(stack_t **stack, unsigned int line_number);
+unsigned short get_op_func(stack_t **stack, unsigned int line_number);
 void free_close(stack_t *stack);
 int isdigits(char *number);
 

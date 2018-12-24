@@ -7,7 +7,7 @@
  * @line_number: line number
  * Return: 1 for success, 0 for error
  */
-int get_op_func(stack_t **stack, unsigned int line_number)
+unsigned short get_op_func(stack_t **stack, unsigned int line_number)
 {
 	instruction_t ops[] = {
 	{"push", push},
